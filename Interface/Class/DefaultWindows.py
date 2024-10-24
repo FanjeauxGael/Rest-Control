@@ -12,6 +12,7 @@ class DefaultWindows(CTkWindows) :
 
     def __init__(self, size, title):
         super().__init__(size, title)
+        self.app.iconphoto(True, PhotoImage(file='Resources/images/logo.png'))
         image_path = os.path.join(os.path.dirname(__file__), '../../Resources/images/')
         img_frame = image_frame(self.app, image_path + 'parameter.png', image_path + 'parameterW.png', '')
         img_frame.event_add('<<open-param-windows>>','<Button-1>')
@@ -20,6 +21,5 @@ class DefaultWindows(CTkWindows) :
 
     def open_param(self,event):
         windows_disable(self.app)
-        Param_Windows(size='600x400',title="Parameter")
-
+        Param_Windows(size='600x400', title="Parameter", main_window=self.app)
 

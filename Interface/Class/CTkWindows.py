@@ -11,6 +11,5 @@ class CTkWindows :
         self.app = customtkinter.CTk()
         self.app.title(title)
         self.app.geometry(size)
-        self.app.iconphoto(True, PhotoImage(file='Resources/images/logo.png'))
 
 
